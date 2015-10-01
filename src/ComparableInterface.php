@@ -8,4 +8,6 @@ interface ComparableInterface
      * @return int The probability the $comparable object matches $this object (0-100)
      */
     public function compareTo(ComparableInterface $comparable);
+
+    public function __toString();
 }
