@@ -28,7 +28,8 @@ Having the following percentages for string similarity:
     blue|reed|25
 ```
 
-Best individual combinations (blueviolet not accounted for):
+Best individual combinations (note: blueviolet not accounted for):
+
 ```
     red|reed|86
     green|bluegreen|71
@@ -36,6 +37,7 @@ Best individual combinations (blueviolet not accounted for):
 ```
 
 Best set combinations:
+
 ```
     red|reed|86
     green|bluegreen|71
