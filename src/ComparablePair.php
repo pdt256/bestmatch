@@ -46,18 +46,12 @@ class ComparablePair
             return $this;
         }
 
-        reset($set1);
-        $key1 = key($set1);
-        $item1 = current($set1);
+        list($key1, $item1) = $this->getFirstKeyAndItem($set1);
 
         foreach ($set2 as $key2 => $item2) {
+            list($subset1, $subset2) = $this->getSubsetsWithoutKeys($set1, $set2, $key1, $key2);
+
             $pair = new ComparablePair($item1, $item2);
-
-            $subset1 = $set1;
-            $subset2 = $set2;
-            unset($subset1[$key1]);
-            unset($subset2[$key2]);
-
             $this->addChild($pair->buildFromSets($subset1, $subset2));
         }
 
@@ -200,5 +194,31 @@ class ComparablePair
     public function __toString()
     {
         return (string) $this->left . '-' . (string) $this->right;
+    }
+
+    private function getFirstKeyAndItem(array $set)
+    {
+        reset($set);
+        $key = key($set);
+        $item = current($set);
+
+        return [$key, $item];
+    }
+
+    /**
+     * @param mixed[] $set1
+     * @param mixed[] $set2
+     * @param mixed $key1
+     * @param mixed $key2
+     * @return array[]
+     */
+    private function getSubsetsWithoutKeys(array $set1, array $set2, $key1, $key2)
+    {
+        $subset1 = $set1;
+        $subset2 = $set2;
+        unset($subset1[$key1]);
+        unset($subset2[$key2]);
+
+        return array($subset1, $subset2);
     }
 }
