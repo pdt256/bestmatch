@@ -5,7 +5,7 @@ interface ComparableInterface
 {
     /**
      * @param ComparableInterface $comparable
-     * @return int Percent (0-100) probability the comparable object matches this object
+     * @return int The probability the $comparable object matches $this object (0-100)
      */
     public function compareTo(ComparableInterface $comparable);
 }
