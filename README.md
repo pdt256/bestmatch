@@ -1,4 +1,9 @@
-# Instructions
+# Best Match
+![Test Coverage](http://img.shields.io/badge/coverage-100%25-green.svg)
+[![Build Status](https://travis-ci.org/pdt256/bestmatch.svg?branch=master)](https://travis-ci.org/pdt256/bestmatch)
+[![License](https://img.shields.io/github/license/pdt256/bestmatch.svg)](https://github.com/pdt256/bestmatch/blob/master/LICENSE.txt)
+
+## Instructions
 
 Find best set combination between subsets
 
