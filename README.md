@@ -45,14 +45,33 @@ Best set combinations:
 ## Decision Tree
 
 ```
-                                                 red
-                     /                            |                                       \
-         red-blueviolet 15                  red-bluegreen 33                              red-reed 86
-        /             \                    /              \                             /          \
- green-bluegreen 86  green-reed 67  green-blueviolet 27  green-reed 67     green-blueviolet 27    green-bluegreen 71
-       |                |                |                   |                   |                     |
-   blue-reed 25     blue-reed 25    blue-reed 25      blue-blueviolet 57  blue-bluegreen 62       blue-blueviolet 57
-       (126)           (107)            (85)               (157)              (175)                   (214)
+root
+   red-blueviolet (15)
+      green-bluegreen (71)
+         blue-reed (25)
+            [111]
+
+      green-reed (67)
+         blue-bluegreen (62)
+            [144]
+
+   red-bluegreen (33)
+      green-blueviolet (27)
+         blue-reed (25)
+            [85]
+
+      green-reed (67)
+         blue-blueviolet (57)
+            [157]
+
+   red-reed (86)
+      green-blueviolet (27)
+         blue-bluegreen (62)
+            [175]
+
+      green-bluegreen (71)
+         blue-blueviolet (57)
+            [214]
 ```
 
 ## License
